@@ -34,21 +34,21 @@ for ( let i = 0; i < words.length; i++ ){
     lookup[firstLetter].push(word);
 }
 
-// for loop
+// for loop that will lookup/loop and search for a first letter
 for ( firstLetter in lookup ){
    let entry = lookup[firstLetter];
 
-   // 💬
+   // this is going to filter the search so it's faster and more efficient 
    entry = entry.filter((item, index) => entry.indexOf(item) === index);
 
-   // 💬
+   // this will sort through the words or letters
    entry = entry.sort();
 
-   // 💬
+   // entry has been modified above and will now lookup the first letter of your word most efficiently 
    lookup[firstLetter] = entry;
 }
 
-// 💬
+// the text should be sorted as we modified it 
 for ( letter of Object.keys(lookup).sort() ){
     console.log(letter, lookup[letter]);
 }
